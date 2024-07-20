@@ -377,7 +377,7 @@ class StoryItem {
 /// inline/inside [ListView] or [Column] just like Google News app. Comes with
 /// gestures to pause, forward and go to previous page.
 class StoryView extends StatefulWidget {
-  final Function()? onTap;
+  final Function()? onDoubleTap;
 
   /// The pages to displayed.
   final List<StoryItem?> storyItems;
@@ -437,7 +437,7 @@ class StoryView extends StatefulWidget {
       horizontal: 16,
       vertical: 8,
     ),
-    this.onTap,
+    this.onDoubleTap,
   });
 
   @override
@@ -673,7 +673,7 @@ class StoryViewState extends State<StoryView> with TickerProviderStateMixin {
               alignment: Alignment.centerRight,
               heightFactor: 1,
               child: GestureDetector(
-                onTap: widget.onTap,
+                onDoubleTap: widget.onDoubleTap,
                 onTapDown: (details) {
                   widget.controller.pause();
                 },
